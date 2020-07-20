@@ -1,5 +1,4 @@
 version: "3.1"
-# Other docker-compose examples in /examples
 
 services:
   minecraft:
@@ -14,14 +13,6 @@ services:
       ENABLE_RCON: "true"
       RCON_PASSWORD: "testing"
       RCON_PORT: 28016
-      # enable env variable replacement
-      REPLACE_ENV_VARIABLES: "TRUE"
-      # define an optional prefix for your env variables you want to replace
-      ENV_VARIABLE_PREFIX: "CFG_"
-      # and here are the actual variables
-      CFG_DB_HOST: "http://localhost:3306"
-      CFG_DB_NAME: "minecraft"
-      CFG_DB_PASSWORD_FILE: "/run/secrets/db_password"
       WHITELIST: user1,user2
     restart: always
   rcon:
@@ -35,7 +26,3 @@ services:
 volumes:
   mc:
   rcon:
-
-secrets:
-  db_password:
-    file: ./db_password
