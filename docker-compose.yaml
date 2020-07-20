@@ -13,16 +13,9 @@ services:
       ENABLE_RCON: "true"
       RCON_PASSWORD: "testing"
       RCON_PORT: 28016
+      ENFORCE_WHITELIST: "TRUE"
       WHITELIST: user1,user2
     restart: always
-  rcon:
-    image: itzg/rcon
-    ports:
-      - "4326:4326"
-      - "4327:4327"
-    volumes:
-      - "rcon:/opt/rcon-web-admin/db"
 
 volumes:
   mc:
-  rcon:
